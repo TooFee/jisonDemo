@@ -1,6 +1,6 @@
-{ funcToStr } = require '../util'
+import { funcToStr } from '../util'
 
-module.exports =
+export default grammar =
   lex:
     rules: [
       [

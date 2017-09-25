@@ -1,8 +1,8 @@
 # mygenerator.js
-Parser = (require "jison").Parser
+import { Parser } from "jison"
 
 # a grammar in JSON
-grammar = require './grammar'
+import grammar from './grammar'
 
 # `grammar` can also be a string that uses jison's grammar format
 parser = new Parser grammar
@@ -11,5 +11,5 @@ parser = new Parser grammar
 # parserSource = parser.generate()
 
 # you can also use the parser directly from memory
-module.exports = (str) ->
+export default calc = (str) ->
   parser.parse str
