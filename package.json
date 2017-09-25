@@ -5,6 +5,7 @@
     "jison": "^0.4.18"
   },
   "devDependencies": {
-    "coffee-require": "^0.0.3"
+    "coffee-require": "^0.0.3",
+    "rollup-plugin-coffee2": "^0.1.12"
   }
 }

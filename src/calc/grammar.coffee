@@ -1,4 +1,4 @@
-import { funcToStr } from '../util'
+import { funcToStr } from '../util.coffee'
 
 export default grammar =
   lex:
@@ -53,7 +53,7 @@ export default grammar =
             (n) ->
               return 1 if n is 0
               return arguments.callee( n - 1 ) * n
-          )($1) 
+          ) $1
       ]
       [ "e %", funcToStr -> $$ = $1 / 100 ]
 
