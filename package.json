@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "coffeescript": "^2.0.0",
+    "ddeyes": "^0.0.4",
+    "jison": "^0.4.18"
+  }
+}
