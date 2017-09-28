@@ -18,7 +18,9 @@
 
 * https://github.com/ternjs/acorn
   * https://segmentfault.com/a/1190000007473065
-* https://github.com/estools/escodegen
+
+* https://github.com/estree/estree 
+* https://github.com/estools
 
 * https://github.com/babel/babylon
 * https://github.com/jquery/esprima

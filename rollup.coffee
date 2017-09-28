@@ -1,4 +1,5 @@
-import coffee2 from 'rollup-plugin-coffee2'
+# import coffee2 from 'rollup-plugin-coffee2'
+import coffee2 from './rollupPlugins/coffee'
 
 export default
   input: './index.js'
@@ -7,14 +8,6 @@ export default
     format: 'cjs'
   plugins: [
     coffee2
-      # defaults
       bare: true
-      extensions: [
-        '.coffee'
-        # '.litcoffee'
-      ]
-      # version: 'auto'
-      version: 2
-      # between )
       sourceMap: true
   ]

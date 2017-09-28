@@ -1,7 +1,17 @@
 {
+  "scripts": {
+    "clean": "rm -rf ./dist",
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "./test/index.coffee"
+  },
   "dependencies": {
+    "acorn": "^5.1.2",
     "coffeescript": "^2.0.0",
     "ddeyes": "^0.0.4",
+    "escodegen": "^1.9.0",
+    "espurify": "^1.7.0",
+    "estraverse": "^4.2.0",
     "jison": "^0.4.18"
   },
   "devDependencies": {
