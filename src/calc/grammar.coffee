@@ -1,4 +1,4 @@
-import { funcToStr } from '../util.coffee'
+import { funcToStr } from '../util'
 
 export default grammar =
   lex:

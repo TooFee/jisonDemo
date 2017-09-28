@@ -2,7 +2,7 @@
 import { Parser } from "jison"
 
 # a grammar in JSON
-import grammar from './grammar.coffee'
+import grammar from './grammar'
 
 # `grammar` can also be a string that uses jison's grammar format
 parser = new Parser grammar

@@ -1,5 +1,15 @@
 import formatError from './format-error'
 import coffee from 'coffeescript'
+import path from 'path'
+
+# import dd from 'ddeyes'
+# import espurify from 'espurify'
+
+import {
+  getAST
+  ricffAST
+  ASTToCode
+} from './util'
 
 sourceMap = (out) ->
 
@@ -17,7 +27,7 @@ export default (opts = {}) ->
 
     return {
       code
-    } unless (extname id) is '.coffee'
+    } unless (path.extname id) is '.coffee'
 
     try
       out = coffee.compile code
@@ -35,5 +45,10 @@ export default (opts = {}) ->
 
       throw err
 
-    code: out.js
+    # dd path.dirname id
+
+    code: ASTToCode ricffAST(
+      getAST out.js
+      path.dirname id
+    )
     map:  sourceMap out

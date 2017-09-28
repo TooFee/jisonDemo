@@ -1,20 +1,19 @@
 import path from 'path'
 import fs from 'fs'
 
-import dd from 'ddeyes'
+# import dd from 'ddeyes'
+# import espurify from 'espurify'
 
 import * as acorn from 'acorn'
 import estraverse from 'estraverse'
-import espurify from 'espurify'
 import escodegen from 'escodegen'
 
 # real coffee file Path
 rCFPath = (filePath) =>
-  fileObj =
+  fileObj = {
     exists: fs.existsSync filePath
-    dir: path.dirname filePath
-    base: path.basename filePath
-    ext: path.extname filePath
+    (path.parse filePath)...
+  }
   unless fileObj.exists
     return filePath if fileObj.ext is '.js'
     if fileObj.ext is '.coffee'
@@ -31,12 +30,17 @@ rCFPath = (filePath) =>
     else return rCFPath path.join filePath, 'index.coffee'
 
 # replace import coffee file from AST
-ricffAST = (ast) =>
+ricffAST = (ast, dirname = __dirname) =>
   estraverse.replace ast
   ,
     leave: (currentNode, parentNode) ->
       if currentNode.type is 'ImportDeclaration'
-        filePath = rCFPath path.join __dirname
+        fileParseObj = path.parse currentNode.source.value
+        return currentNode if (
+          fileParseObj.root is '' and
+          fileParseObj.dir is ''
+        )
+        filePath = rCFPath path.join dirname
         , currentNode.source.value
         currentNode.source.value = filePath
         # dd espurify currentNode
