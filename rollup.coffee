@@ -1,5 +1,4 @@
-# import coffee2 from 'rollup-plugin-coffee2'
-import coffee2 from './rollupPlugins/coffee'
+import coffee2 from 'cfx.rollup-plugin-coffee2'
 
 export default
   input: './index.js'

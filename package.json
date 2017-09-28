@@ -2,20 +2,17 @@
   "scripts": {
     "clean": "rm -rf ./dist",
     "build": "rollup -c",
+    "rebuild": "npm run clean; npm run build",
     "dev": "rollup -c -w",
     "test": "./test/index.coffee"
   },
   "dependencies": {
-    "acorn": "^5.1.2",
     "coffeescript": "^2.0.0",
     "ddeyes": "^0.0.4",
-    "escodegen": "^1.9.0",
-    "espurify": "^1.7.0",
-    "estraverse": "^4.2.0",
     "jison": "^0.4.18"
   },
   "devDependencies": {
-    "coffee-require": "^0.0.3",
-    "rollup-plugin-coffee2": "^0.1.12"
+    "cfx.rollup-plugin-coffee2": "^0.0.3",
+    "coffee-require": "^0.0.3"
   }
 }
